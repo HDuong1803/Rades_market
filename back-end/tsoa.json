@@ -1,0 +1,57 @@
+{
+  "entryFile": "src/server.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["./src/**/*controller.ts"],
+  "spec": {
+    "outputDirectory": "build",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "authorize": {
+        "type": "apiKey",
+        "name": "authorize",
+        "in": "header"
+      }
+    },
+    "basePath": ""
+  },
+  "routes": {
+    "routesDir": "build",
+    "authenticationModule": "./src/authentication.ts"
+  },
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es6",
+    "module": "CommonJS",
+    "outDir": "build",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./",
+    "esModuleInterop": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@constants": ["./src/constants/index.ts"],
+      "@middlewares": ["./src/middlewares/index.ts"],
+      "@schemas": ["./src/schemas/index.ts"],
+      "@providers": ["./src/providers/index.ts"]
+    }
+  }
+}
