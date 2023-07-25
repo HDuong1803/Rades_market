@@ -46,7 +46,7 @@ const onJobGetDataFromSmartContract = async () => {
      * the last block number plus 20000 and the current block number obtained from the web3 API.
      */
     const last_block_number_onchain = Math.min(
-      last_block_number + 1000,
+      last_block_number + 10000,
       await web3.eth.getBlockNumber()
     );
     /**
@@ -82,7 +82,7 @@ const onJobGetDataFromSmartContract = async () => {
         `[onJobGetDataFromSmartContract] Synchronized ${listTxHash.length} transactions`
       )
     } else {
-      if (last_block_number_onchain - last_block_number > 500) {
+      if (last_block_number_onchain - last_block_number > 5000) {
         await Synchronize.create({
           last_block_number: last_block_number_onchain,
           transactions: [],
@@ -303,13 +303,10 @@ const synchronizeMarket = async (
   // }
 
   const eventListNFT = await marketContract.getPastEvents('ListNFT', getPastEventsConfig);
-  logger.info(`Synchronizing ${eventListNFT.length} list events`);
 
   const eventUnlistNFT = await marketContract.getPastEvents('UnlistNFT', getPastEventsConfig);
-  logger.info(`Synchronizing ${eventUnlistNFT.length} unlist events`);
 
   const eventBuyNFT = await marketContract.getPastEvents('BuyNFT', getPastEventsConfig);
-  logger.info(`Synchronizing ${eventBuyNFT.length} buy events`);
 
   const event = [
     ...eventListNFT,
