@@ -42,7 +42,7 @@ import { formatDateYYYYMMDDHHMMSS, getToast, numberFormat } from "@/utils";
       } else {
         setLockedStake([]);
       }
-    }, [web3Provider, wallet.address, tranHash]);
+    }, [web3Provider, wallet.address]);
   
     React.useEffect(() => {
       handleGetStakerInfo();

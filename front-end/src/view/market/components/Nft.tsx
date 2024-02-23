@@ -1,4 +1,4 @@
-import { Clarity, INftItem, ActionType } from "@/_types_";
+import { INftItem, ActionType } from "@/_types_";
 import {
   Flex,
   Image,
@@ -13,7 +13,6 @@ import React from "react";
 interface IProps {
   item: INftItem;
   index: number;
-  isTransfer?: boolean;
   isUnList?: boolean;
   isList?: boolean;
   isAuction?: boolean;
@@ -22,7 +21,6 @@ interface IProps {
 
 export default function Nft({
   item,
-  isTransfer,
   isAuction,
   isList,
   isUnList,
@@ -67,16 +65,6 @@ export default function Nft({
             Auction
           </Button>
         </SimpleGrid>
-      )}
-      {isTransfer && (
-        <Button
-          variant="secondary"
-          w="full"
-          mt="10px"
-          onClick={() => onAction && onAction("TRANSFER")}
-        >
-          Transfer
-        </Button>
       )}
 
       {isUnList && (
