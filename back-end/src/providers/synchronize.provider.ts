@@ -46,7 +46,7 @@ const onJobGetDataFromSmartContract = async () => {
      * the last block number plus 20000 and the current block number obtained from the web3 API.
      */
     const last_block_number_onchain = Math.min(
-      last_block_number + 10000,
+      last_block_number + 1000,
       await web3.eth.getBlockNumber()
     );
     /**

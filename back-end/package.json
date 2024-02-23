@@ -20,7 +20,7 @@
     "ipfs": "0.64.0",
     "ipfs-http-client": "56.0.3",
     "module-alias": "^2.2.2",
-    "mongoose": "^6.6.0",
+    "mongoose": "^8.1.2",
     "multer": "1.4.2",
     "node-cron": "^3.0.2",
     "pretty-format": "^29.4.1",
